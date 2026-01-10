@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cz4.ai</title>
+    <meta name="description" content="cz4.ai — Reserved domain. For strategic inquiries only.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            line-height: 1.6; 
+            color: #ffffff; 
+            background: linear-gradient(135deg, #060a0f 0%, #0b1218 100%);
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            padding: 20px; 
+            text-align: center; 
+            position: relative; 
+            overflow-x: hidden; 
+        }
+        .light-effect { 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            width: min(120vw, 1000px); 
+            height: min(120vh, 1000px); 
+            background: radial-gradient(circle at center, rgba(100, 220, 230, 0.08) 0%, transparent 65%);
+            transform: translate(-50%, -50%); 
+            pointer-events: none; 
+            z-index: -1; 
+        }
+        .container { 
+            max-width: 760px; 
+            width: 100%; 
+            padding: 70px 40px; 
+            background: rgba(8, 16, 24, 0.85);
+            backdrop-filter: blur(16px); 
+            border-radius: 28px; 
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(100, 220, 230, 0.18); 
+            border: 1px solid rgba(100, 220, 230, 0.15); 
+            z-index: 1; 
+        }
+        h1 { 
+            font-size: clamp(4rem, 12vw, 7rem); /* 短域名 → 超大字体 */
+            font-weight: 200; 
+            letter-spacing: 0.3em; 
+            margin-bottom: 35px; 
+            opacity: 0.98; 
+            text-transform: lowercase; 
+            color: #b0f4f8;
+        }
+        .domain { display: inline-block; transition: opacity 0.3s ease; }
+        .domain:hover { opacity: 0.85; }
+        p { 
+            font-size: clamp(1.2rem, 4.5vw, 1.6rem); 
+            opacity: 0.85; 
+            max-width: 640px; 
+            margin: 0 auto 45px; 
+            line-height: 1.8; 
+            color: #90d8dc;
+        }
+        .note-section { 
+            background: rgba(15, 25, 35, 0.4); 
+            border-radius: 18px; 
+            padding: 28px; 
+            margin: 45px 0; 
+            border: 1px solid rgba(100, 220, 230, 0.2); 
+        }
+        .note-text { 
+            font-size: 0.98rem; 
+            opacity: 0.75; 
+            line-height: 1.8; 
+            color: #70c0c8;
+        }
+        .contact-section { margin-top: 45px; }
+        .email-link { 
+            font-size: 1.5rem; 
+            color: #60e8f0; 
+            text-decoration: none; 
+            font-family: 'Courier New', monospace; 
+            padding: 12px 26px; 
+            background: rgba(100, 220, 230, 0.1); 
+            border-radius: 12px; 
+            display: inline-block; 
+            border: 1px solid rgba(100, 220, 230, 0.35); 
+            transition: all 0.3s ease; 
+        }
+        .email-link:hover { 
+            background: rgba(100, 220, 230, 0.2); 
+            transform: translateY(-3px); 
+            box-shadow: 0 8px 20px rgba(100, 220, 230, 0.15); 
+        }
+        .contact-note { 
+            font-size: 0.95rem; 
+            opacity: 0.65; 
+            margin-top: 18px; 
+            font-style: italic; 
+            color: #50a8b0;
+        }
+        .footer { 
+            position: absolute; 
+            bottom: 30px; 
+            font-size: 0.85rem; 
+            opacity: 0.4; 
+            width: 100%; 
+            text-align: center; 
+            color: #408890;
+        }
+        @media (max-width: 768px) { 
+            .container { padding: 50px 30px; margin: 20px; } 
+            .email-link { font-size: 1.3rem; } 
+            h1 { 
+                font-size: clamp(3.2rem, 14vw, 5.5rem);
+                letter-spacing: 0.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="light-effect"></div>
+    <div class="container">
+        <h1><span class="domain">cz4.ai</span></h1>
+        <p>This domain is reserved.<br>Future project consideration.</p>
+        
+        <!-- 低调中性免责声明 -->
+        <div class="note-section">
+            <div class="note-text">
+                This domain is reserved for future development and is not associated with any third party.
+            </div>
+        </div>
+        
+        <!-- 联系方式 -->
+        <div class="contact-section">
+            <a href="#" class="email-link" aria-label="Send email">
+                <span id="email-display">joshua369x@gmail.com</span>
+            </a>
+            <div class="contact-note">
+                For strategic inquiries only.
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        © <span id="currentYear"></span> cz4.ai — All rights reserved.
+    </div>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        const email = 'joshua369x' + '@' + 'gmail.com';
+        const subject = '?subject=Inquiry: cz4.ai';
+        const mailto = 'mailto:' + email + subject;
+        document.querySelector('.email-link').href = mailto;
+        document.getElementById('email-display').textContent = email;
+    </script>
+</body>
+</html>

@@ -11,7 +11,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
-
     <style>
         :root {
             --primary-color: #00ddff; /* Electric Blue/Cyan */
@@ -21,7 +20,6 @@
             --card-background: #101418;
             --border-color: #2a3038;
         }
-
         body {
             background-color: var(--background-color);
             color: var(--text-color);
@@ -34,12 +32,10 @@
             min-height: 100vh;
             text-align: center;
         }
-
         .container {
             max-width: 850px;
             width: 100%;
         }
-
         /* --- Header & Domain Name --- */
         .domain-name {
             font-family: 'Space Grotesk', sans-serif;
@@ -106,7 +102,6 @@
           80%{ clip-path: inset(46% 0 51% 0); }
           100%{ clip-path: inset(19% 0 71% 0); }
         }
-
         @keyframes glitch-anim-2{
           0%{ clip-path: inset(81% 0 10% 0); }
           20%{ clip-path: inset(19% 0 71% 0); }
@@ -121,7 +116,6 @@
             margin-top: 3rem;
             line-height: 1.8;
         }
-
         .highlight-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -142,12 +136,10 @@
             font-weight: 700;
             color: var(--primary-color);
         }
-
         .highlight-card .description {
             font-size: 1rem;
             margin-top: 0.5rem;
         }
-
         /* --- Footer & CTA --- */
         .footer-cta {
             margin-top: 4rem;
@@ -156,7 +148,6 @@
             border-radius: 12px;
             border-top: 2px solid var(--primary-color);
         }
-
         .price {
             font-family: 'Space Grotesk', sans-serif;
             font-size: clamp(2.5rem, 8vw, 4rem);
@@ -164,7 +155,6 @@
             color: var(--header-text-color);
             margin-bottom: 0;
         }
-
         .installments {
             font-size: 1rem;
             margin-bottom: 2rem;
@@ -177,7 +167,6 @@
             gap: 1rem;
             flex-wrap: wrap;
         }
-
         .btn {
             padding: 14px 32px;
             font-family: 'Space Grotesk', sans-serif;
@@ -189,7 +178,6 @@
             border-radius: 8px;
             border: 2px solid var(--primary-color);
         }
-
         .btn-buy {
             background-color: var(--primary-color);
             color: var(--background-color);
@@ -202,7 +190,6 @@
             box-shadow: 0 0 25px rgba(0, 221, 255, 0.6);
             transform: translateY(-2px);
         }
-
         .btn-contact {
             background-color: transparent;
             color: var(--primary-color);
@@ -212,17 +199,77 @@
             color: var(--background-color);
         }
 
+        /* --- NEW: COUNTER OFFER SECTION --- */
+        .offer-divider {
+            margin: 2rem auto;
+            border: 0;
+            border-top: 1px dashed var(--border-color);
+            width: 80%;
+            opacity: 0.5;
+        }
+        .offer-container {
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+            text-align: center;
+        }
+        .offer-label {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--text-color);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .form-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .cz-input {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+        .cz-input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 10px rgba(0, 221, 255, 0.2);
+        }
+        .btn-offer {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            width: 100%;
+            padding: 10px;
+            font-family: 'Space Grotesk', sans-serif;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        .btn-offer:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+        .status-msg { margin-top: 10px; font-size: 0.9rem; min-height: 1.2em; }
+        .success-msg { color: #00ddff; }
+        .error-msg { color: #ff3366; }
+
         /* Responsive Design */
         @media (max-width: 500px) {
-             .cta-buttons {
-                flex-direction: column;
-                align-items: stretch;
-            }
+             .cta-buttons { flex-direction: column; align-items: stretch; }
+             .form-row { flex-direction: column; }
         }
     </style>
 </head>
 <body>
-
     <main class="container">
         <header>
             <h1 class="domain-name">
@@ -250,14 +297,36 @@
         <footer class="footer-cta">
             <div class="price">$4,444</div>
             <div class="installments">Available in 4 flexible installments.</div>
+            
             <div class="cta-buttons">
                 <a href="https://www.spaceship.com/s/buy/cz4.ai/x5GxvNRrie9UFHrC" class="btn btn-buy" target="_blank" rel="noopener noreferrer">Acquire Your AI Agent</a>
                 <button id="contactBtn" class="btn btn-contact">Contact for Details</button>
             </div>
+
+            <!-- OFFER SYSTEM -->
+            <hr class="offer-divider">
+            <div class="offer-container">
+                <span class="offer-label">or Make a Counter Offer</span>
+                <form id="offerForm">
+                    <!-- FormSubmit Hidden Config -->
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_subject" value="New Offer for cz4.ai">
+
+                    <div class="form-row">
+                        <input type="number" name="offer_amount" class="cz-input" placeholder="Offer Amount (USD)" min="100" required>
+                        <input type="email" name="email" class="cz-input" placeholder="Your Email Address" required>
+                    </div>
+                    <button type="submit" class="btn-offer">Submit Offer</button>
+                </form>
+                <div id="formStatus" class="status-msg"></div>
+            </div>
+
         </footer>
     </main>
 
     <script>
+        /* --- COPY EMAIL LOGIC --- */
         document.getElementById('contactBtn').addEventListener('click', function() {
             const email = 'joshua369x@gmail.com';
             
@@ -291,7 +360,50 @@
             document.body.removeChild(textArea);
             setTimeout(() => { buttonElement.textContent = 'Contact for Details'; }, 3000);
         }
-    </script>
 
+        /* --- AJAX FORM SUBMISSION LOGIC (NEW) --- */
+        const offerForm = document.getElementById('offerForm');
+        const statusDiv = document.getElementById('formStatus');
+
+        offerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const btn = offerForm.querySelector('.btn-offer');
+            const originalText = btn.innerText;
+            
+            // Loading State
+            btn.innerText = "Transmitting...";
+            btn.disabled = true;
+            statusDiv.innerText = "";
+
+            const formData = new FormData(offerForm);
+            const data = Object.fromEntries(formData.entries());
+
+            fetch("https://formsubmit.co/ajax/joshua369x@gmail.com", {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                statusDiv.innerText = "Offer Transmitted. We will connect shortly.";
+                statusDiv.className = "status-msg success-msg";
+                offerForm.reset();
+            })
+            .catch(error => {
+                statusDiv.innerText = "Transmission Error. Please use the Contact button.";
+                statusDiv.className = "status-msg error-msg";
+            })
+            .finally(() => {
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                }, 2000);
+            });
+        });
+    </script>
 </body>
 </html>
